@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Online Resume Builder</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:0;
+            padding:20px;
+        }
+
+        .container{
+            display:flex;
+            gap:20px;
+        }
+
+        .form-section, .resume-section{
+            width:50%;
+            background:white;
+            padding:20px;
+            border-radius:8px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea{
+            width:100%;
+            padding:8px;
+            margin:5px 0 10px;
+        }
+
+        button{
+            background:#007bff;
+            color:white;
+            border:none;
+            padding:10px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        h2{
+            border-bottom:2px solid #ddd;
+            padding-bottom:5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Online Resume Builder</h1>
+
+<div class="container">
+
+<div class="form-section">
+
+<h2>Enter Your Details</h2>
+
+<label>Name</label>
+<input type="text" id="name">
+
+<label>Email</label>
+<input type="text" id="email">
+
+<label>Phone</label>
+<input type="text" id="phone">
+
+<label>Skills</label>
+<textarea id="skills"></textarea>
+
+<label>Education</label>
+<textarea id="education"></textarea>
+
+<label>Experience</label>
+<textarea id="experience"></textarea>
+
+<button onclick="generateResume()">Generate Resume</button>
+
+</div>
+
+<div class="resume-section">
+
+<h2>Resume Preview</h2>
+
+<h3 id="rname"></h3>
+<p id="remail"></p>
+<p id="rphone"></p>
+
+<h3>Skills</h3>
+<p id="rskills"></p>
+
+<h3>Education</h3>
+<p id="reducation"></p>
+
+<h3>Experience</h3>
+<p id="rexperience"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function generateResume(){
+
+document.getElementById("rname").innerText =
+document.getElementById("name").value;
+
+document.getElementById("remail").innerText =
+"Email: " + document.getElementById("email").value;
+
+document.getElementById("rphone").innerText =
+"Phone: " + document.getElementById("phone").value;
+
+document.getElementById("rskills").innerText =
+document.getElementById("skills").value;
+
+document.getElementById("reducation").innerText =
+document.getElementById("education").value;
+
+document.getElementById("rexperience").innerText =
+document.getElementById("experience").value;
+
+}
+
+</script>
+
+</body>
+</html>
